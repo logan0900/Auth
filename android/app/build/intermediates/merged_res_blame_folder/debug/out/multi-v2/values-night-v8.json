@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\KahooDigitals\\myTest\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "F:\\KahooDigitals\\Auth\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\M.LAPTOP\\.gradle\\caches\\transforms-3\\f61858ab2d463bfc75fa0b69b40e6339\\transformed\\material-1.1.0\\res\\values-night-v8\\values-night-v8.xml",

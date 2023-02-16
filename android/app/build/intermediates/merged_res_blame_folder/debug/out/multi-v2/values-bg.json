@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\KahooDigitals\\myTest\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bg\\values-bg.xml",
+            "outputFile": "F:\\KahooDigitals\\Auth\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bg\\values-bg.xml",
             "map": [
                 {
                     "source": "C:\\Users\\M.LAPTOP\\.gradle\\caches\\transforms-3\\5c61d7afbc1bcd99cb491da6ba2ee6c1\\transformed\\core-1.6.0\\res\\values-bg\\values-bg.xml",

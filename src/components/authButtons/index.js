@@ -24,7 +24,7 @@ const AuthButton = ({
       onPress={onPress}
       style={[
         {
-          height: 45,
+          height: 44,
           backgroundColor: primaryButton
             ? '#FF9E2C'
             : grayButton
@@ -68,7 +68,7 @@ const AuthButton = ({
 
 const styles = StyleSheet.create({
   buttonStyle: {
-    height: 55,
+    height: 44,
     backgroundColor: '#2F73FF',
     width: '100%',
     alignItems: 'center',

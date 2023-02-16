@@ -13,8 +13,8 @@ import {Images, theme} from '../../../constants';
 
 const Login = props => {
   const [isState, setState] = useState({
-    email: 'abc@g.com',
-    password: '123',
+    email: '',
+    password: '',
     device_token: '',
     eye: true,
   });
@@ -117,7 +117,7 @@ const Login = props => {
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={() => {
-            // props.navigation.navigate('Auth', {screen: 'ForgetPassword'});
+            props.navigation.navigate('forgotPassword');
           }}>
           <Text
             style={{
@@ -196,7 +196,7 @@ const Login = props => {
         </TouchableOpacity>
       </View>
 
-      {/* ========== Privacy Policy ========== */}
+      {/* ========== Continue With ========== */}
 
       <View
         style={{
@@ -204,11 +204,13 @@ const Login = props => {
           flexDirection: 'row',
           justifyContent: 'space-between',
           alignItems: 'center',
+          marginTop: 30,
+          marginBottom: 10,
         }}>
         <View
           style={{
             width: '35%',
-            backgroundColor: theme.textColors.gray2Text,
+            backgroundColor: theme.bordersColor.grayBorder,
             height: 1,
           }}></View>
         <Text
@@ -223,56 +225,61 @@ const Login = props => {
         <View
           style={{
             width: '35%',
-            backgroundColor: theme.textColors.gray2Text,
+            backgroundColor: theme.bordersColor.grayBorder,
             height: 1,
           }}></View>
       </View>
 
+      {/* ========== Social ========== */}
+
       <View
         style={{
-          height: 100,
-          width: '100%',
-          backgroundColor: 'red',
-
+          height: 50,
+          width: '50%',
           flexDirection: 'row',
+          alignItems: 'center',
+          alignSelf: 'center',
+          justifyContent: 'space-between',
         }}>
         <TouchableOpacity
           activeOpacity={0.7}
           style={{
             alignItems: 'center',
-            justifyContent: 'flex-end',
-            height: 100,
-            width: '100%',
+            justifyContent: 'center',
+            height: 44,
+            width: 44,
           }}>
           <Image
             source={Images.iconImages.google}
             style={{height: 44, width: 44}}
           />
         </TouchableOpacity>
+
         <TouchableOpacity
           activeOpacity={0.7}
           style={{
             alignItems: 'center',
-            justifyContent: 'flex-end',
-            height: 100,
-            width: '100%',
+            justifyContent: 'center',
+            height: 44,
+            width: 44,
           }}>
           <Image
-            source={Images.iconImages.google}
+            source={Images.iconImages.facebook}
             style={{height: 44, width: 44}}
           />
         </TouchableOpacity>
+
         <TouchableOpacity
           activeOpacity={0.7}
           style={{
             alignItems: 'center',
-            justifyContent: 'flex-end',
-            height: 100,
-            width: '100%',
+            justifyContent: 'center',
+            height: 48,
+            width: 48,
           }}>
           <Image
-            source={Images.iconImages.google}
-            style={{height: 44, width: 44}}
+            source={Images.iconImages.apple}
+            style={{height: 48, width: 48}}
           />
         </TouchableOpacity>
       </View>
