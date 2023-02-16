@@ -1,0 +1,47 @@
+0 verbose cli [
+0 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+0 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+0 verbose cli   'start',
+0 verbose cli   '--cache',
+0 verbose cli   'clean',
+0 verbose cli   '--force'
+0 verbose cli ]
+1 info using npm@8.5.5
+2 info using node@v16.15.0
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 4ms
+5 timing config:load:file:C:\Program Files\nodejs\node_modules\npm\npmrc Completed in 14ms
+6 timing config:load:builtin Completed in 15ms
+7 timing config:load:cli Completed in 5ms
+8 timing config:load:env Completed in 2ms
+9 timing config:load:file:F:\React Native\Aaa\newProject\.npmrc Completed in 0ms
+10 timing config:load:project Completed in 4ms
+11 timing config:load:file:C:\Users\M.LAPTOP\.npmrc Completed in 0ms
+12 timing config:load:user Completed in 1ms
+13 timing config:load:file:C:\Users\M.LAPTOP\AppData\Roaming\npm\etc\npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:validate Completed in 1ms
+16 timing config:load:credentials Completed in 2ms
+17 timing config:load:setEnvs Completed in 3ms
+18 timing config:load Completed in 37ms
+19 timing npm:load:configload Completed in 37ms
+20 timing npm:load:setTitle Completed in 1ms
+21 timing config:load:flatten Completed in 7ms
+22 timing npm:load:display Completed in 10ms
+23 verbose logfile F:\React Native\Aaa\newProject\clean\_logs\2022-05-20T10_17_31_791Z-debug-0.log
+24 timing npm:load:logFile Completed in 17ms
+25 timing npm:load:timers Completed in 0ms
+26 timing npm:load:configScope Completed in 0ms
+27 warn using --force Recommended protections disabled.
+28 timing npm:load Completed in 73ms
+29 http fetch GET 200 https://registry.npmjs.org/npm 4155ms (cache miss)
+30 timing command:run-script Completed in 1294049ms
+31 timing command:start Completed in 1294067ms
+32 notice
+32 notice New [33mminor[39m version of npm available! [31m8.5.5[39m -> [32m8.10.0[39m
+32 notice Changelog: [36mhttps://github.com/npm/cli/releases/tag/v8.10.0[39m
+32 notice Run [32mnpm install -g npm@8.10.0[39m to update!
+32 notice
+33 verbose exit 0
+34 timing npm Completed in 1294671ms
+35 info ok
