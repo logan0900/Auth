@@ -77,6 +77,7 @@ const ChangePassword = props => {
           }}>
           <TextInput
             placeholder="Password"
+            placeholderTextColor={theme.textColors.liteGrayText}
             secureTextEntry={isState.eye}
             style={Styles.passwordInput}
             value={isState.password}
@@ -111,6 +112,7 @@ const ChangePassword = props => {
           }}>
           <TextInput
             placeholder="Confrim Password"
+            placeholderTextColor={theme.textColors.liteGrayText}
             secureTextEntry={isState.eye}
             style={Styles.passwordInput}
             value={isState.confrimPassword}

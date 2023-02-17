@@ -87,6 +87,7 @@ const Login = props => {
           </Text>
           <TextInput
             placeholder="Email"
+            placeholderTextColor={theme.textColors.liteGrayText}
             keyboardType="email-address"
             value={isState.email}
             style={Styles.emailInput}
@@ -114,6 +115,7 @@ const Login = props => {
             }}>
             <TextInput
               placeholder="Password"
+              placeholderTextColor={theme.textColors.liteGrayText}
               secureTextEntry={isState.eye}
               value={isState.password}
               style={Styles.passwordInput}

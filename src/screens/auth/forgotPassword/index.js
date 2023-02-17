@@ -72,6 +72,7 @@ const ForgotPassword = props => {
       <View style={{marginTop: 20}}>
         <TextInput
           placeholder="Email"
+          placeholderTextColor={theme.textColors.liteGrayText}
           keyboardType="email-address"
           value={isState.email}
           style={Styles.emailInput}

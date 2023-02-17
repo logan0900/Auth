@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {StatusBar, Text, View} from 'react-native';
 import {AuthButton} from '../../../components';
+import { theme } from '../../../constants';
 
 const Home = props => {
   const [isState, setState] = useState({
@@ -10,7 +11,7 @@ const Home = props => {
     <View style={{flex: 1, backgroundColor: '#FFF'}}>
       <StatusBar backgroundColor={'#FFF'} barStyle={'dark-content'} />
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text style={{fontSize: 40}}>Home Screen</Text>
+        <Text style={{fontSize: 40, color:theme.primaryColor}}>Home Screen</Text>
       </View>
       <View
         style={{

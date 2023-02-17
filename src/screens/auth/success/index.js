@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import {StatusBar, Text, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import { Tost } from '../../../components';
-import {Images} from '../../../constants';
+import {Tost} from '../../../components';
+import {Images, theme} from '../../../constants';
 
 const Success = props => {
   useEffect(() => {

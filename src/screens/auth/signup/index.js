@@ -55,7 +55,7 @@ const Signup = props => {
   };
   return (
     <View style={{flex: 1, backgroundColor: theme.backgrounds.whiteBG}}>
-       <StatusBar backgroundColor={'#FFF'} />
+      <StatusBar backgroundColor={'#FFF'} />
       <ScrollView
         contentContainerStyle={{flexGrow: 1}}
         showsVerticalScrollIndicator={false}>
@@ -107,7 +107,7 @@ const Signup = props => {
               </Text>
               <TextInput
                 placeholder="John"
-                // keyboardType="email-address"
+                placeholderTextColor={theme.textColors.liteGrayText}
                 value={isState.firstName}
                 style={{
                   color: theme.textColors.blackText,
@@ -137,7 +137,7 @@ const Signup = props => {
               </Text>
               <TextInput
                 placeholder="Smith"
-                // keyboardType="ascii-capable"
+                placeholderTextColor={theme.textColors.liteGrayText}
                 value={isState.lastName}
                 style={{
                   color: theme.textColors.blackText,
@@ -167,6 +167,7 @@ const Signup = props => {
               Email
             </Text>
             <TextInput
+              placeholderTextColor={theme.textColors.liteGrayText}
               placeholder="john@gmail.com"
               keyboardType="email-address"
               value={isState.email}
@@ -200,6 +201,7 @@ const Signup = props => {
               }}>
               <TextInput
                 placeholder="********"
+                placeholderTextColor={theme.textColors.liteGrayText}
                 secureTextEntry={isState.eye}
                 value={isState.password}
                 style={Styles.passwordInput}
@@ -237,6 +239,7 @@ const Signup = props => {
             </Text>
             <TextInput
               placeholder="12345 7841 123"
+              placeholderTextColor={theme.textColors.liteGrayText}
               keyboardType="number-pad"
               style={Styles.emailInput}
               value={isState.number}
@@ -294,7 +297,7 @@ const Signup = props => {
             />
           </View>
           <View style={{width: '90%', paddingTop: 3}}>
-            <Text style={{letterSpacing: 1}}>
+            <Text style={{letterSpacing: 1, color: theme.textColors.darkText}}>
               Keep me updated with special offers, exciting products and news
             </Text>
           </View>
