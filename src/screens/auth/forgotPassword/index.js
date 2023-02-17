@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {
   Image,
+  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -15,26 +16,27 @@ import {Images, theme} from '../../../constants';
 const ForgotPassword = props => {
   const [isState, setState] = useState({
     email: '',
-    password: '',
-    device_token: '',
-    eye: true,
+    loader: false,
   });
 
-  function LoginButton() {
+  function NextButton() {
     let data = {
       email: isState.email?.toLowerCase()?.trim(),
-      password: isState.password?.trim(),
-      device_token: isState.device_token,
     };
-    console.log('user login data', data);
-    if (!isState.email || !isState.password) {
-      Tost('Please Fill In All Required Fields.', '.', 'error');
+    console.log('user data', data);
+    if (!isState.email) {
+      Tost('Enter the Email.', '.', 'error');
     } else {
-      // props?.SIGN_IN(data, props?.navigation);
+      setState({...isState, loader: true});
+      setTimeout(() => {
+        props?.navigation?.navigate('otp', {email: isState.email});
+        setState({...isState, loader: false});
+      }, 1500);
     }
   }
   return (
     <View style={{flex: 1, backgroundColor: theme.backgrounds.whiteBG}}>
+      <StatusBar backgroundColor={'#FFF'} />
       {/* ====== Header ====== */}
 
       <View
@@ -123,10 +125,8 @@ const ForgotPassword = props => {
         }}>
         <AuthButton
           title={'Next'}
-          onPress={() =>
-            props?.navigation?.navigate('otp', {email: isState.email})
-          }
-          // loader={props?.loader}
+          onPress={() => NextButton()}
+          loader={isState.loader}
           primaryButton
         />
       </View>

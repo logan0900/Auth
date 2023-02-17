@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {
   Image,
+  StatusBar,
   StyleSheet,
   Text,
-  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -15,10 +15,14 @@ const OTP = props => {
   const [state, setState] = useState({
     otp: '',
     Saved_OTP: '',
+    loader: false,
   });
   const [state1, setState1] = useState({
     counter: 30,
   });
+
+  const UserData = props?.route?.params?.userData;
+  const forgetEmail = props?.route?.params?.email;
 
   useEffect(() => {
     if (state1.counter > 0) {
@@ -29,8 +33,25 @@ const OTP = props => {
       // return  value
     }
   }, [state1.counter]);
+
+  const VerifyButton = () => {
+    if (!state.otp) {
+      Tost('Please fill the OTP.', '.', 'error');
+    } else {
+      setState({...state, loader: true});
+
+      setTimeout(() => {
+        forgetEmail
+          ? props?.navigation?.navigate('changePassword')
+          : props.navigation.navigate('login', {userData: UserData});
+        setState({...state, loader: false});
+      }, 1500);
+    }
+  };
+
   return (
     <View style={{flex: 1, backgroundColor: theme.backgrounds.whiteBG}}>
+       <StatusBar backgroundColor={'#FFF'} />
       {/* ====== Logo ====== */}
 
       <View
@@ -62,7 +83,7 @@ const OTP = props => {
           textAlign: 'center',
           color: '#1F1F1F',
         }}>
-        {props?.route?.params?.email}
+        {UserData ? UserData?.email : forgetEmail}
       </Text>
 
       <Text
@@ -191,14 +212,14 @@ const OTP = props => {
           width: '100%',
           alignItems: 'center',
           justifyContent: 'center',
-          marginTop: 10,
+          marginTop: 30,
         }}>
         <AuthButton
           title={'Verify'}
           onPress={() => {
-            props?.navigation?.navigate('changePassword')
+            VerifyButton();
           }}
-          // loader={props?.loader}
+          loader={state.loader}
           primaryButton
         />
       </View>

@@ -20,26 +20,29 @@ const DropdownComponent = ({value, options, onSelect}) => {
         padding: 1,
         justifyContent: 'center',
         paddingLeft: 10,
-        marginTop: 10,
+        marginTop: 5,
+        backgroundColor: '#F9F9F9',
+        borderRadius:5
       }}
       textStyle={{
         paddingHorizontal: 2,
         fontSize: 14,
         letterSpacing: 0.5,
         color: theme.textColors.darkGrayText,
+        width: '89.5%',
       }}
       dropdownTextHighlightStyle={{
         color: theme.textColors.primaryText,
       }}
       dropdownStyle={{
-        width: '39.5%',
+        width: '89.5%',
         backgroundColor: '#f9f8f9',
         marginLeft: -10,
         paddingVertical: 5,
         marginTop: 20,
         paddingLeft: 10,
         paddingRight: 10,
-        borderRadius: 7,
+        borderRadius: 5,
       }}
       dropdownTextStyle={{
         fontSize: 14,

@@ -9,6 +9,7 @@ import signup from '../../screens/auth/signup';
 import forgotPassword from '../../screens/auth/forgotPassword';
 import otp from '../../screens/auth/otp';
 import changePassword from '../../screens/auth/changePassword';
+import success from '../../screens/auth/success';
 
 const Stack = createStackNavigator();
 
@@ -47,6 +48,11 @@ export const Auth = () => {
       <Stack.Screen
         name="changePassword"
         component={changePassword}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="success"
+        component={success}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

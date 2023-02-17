@@ -1,40 +1,48 @@
 import React, {useState} from 'react';
 import {
-  Image,
   StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
   View,
+  StatusBar
 } from 'react-native';
 import {AuthButton, Tost} from '../../../components';
 import Entypo from 'react-native-vector-icons/Entypo';
-import Fontisto from 'react-native-vector-icons/Fontisto';
 import {Images, theme} from '../../../constants';
 
 const ChangePassword = props => {
   const [isState, setState] = useState({
     password: '',
     confrimPassword: '',
-    device_token: '',
+    loader: false,
     eye: true,
   });
 
-  function LoginButton() {
+  function NextButton() {
     let data = {
-      email: isState.email?.toLowerCase()?.trim(),
       password: isState.password?.trim(),
-      device_token: isState.device_token,
+      confrimPassword: isState.confrimPassword?.trim(),
     };
     console.log('user login data', data);
-    if (!isState.email || !isState.password) {
-      Tost('Please Fill In All Required Fields.', '.', 'error');
+    if (!isState.password || !isState.confrimPassword) {
+      Tost('Please fill the required fields.', '.', 'info');
+    } else if (isState.password.length < 3) {
+      Tost('Password must be at least 3 characters', '.', 'info');
+    } else if (isState.password !== isState.confrimPassword) {
+      Tost('Please Enter Same Password.', '.', 'error');
     } else {
-      // props?.SIGN_IN(data, props?.navigation);
+      setState({...isState, loader: true});
+
+      setTimeout(() => {
+        props.navigation.navigate('success', {userData: data});
+        setState({...isState, loader: false});
+      }, 1500);
     }
   }
   return (
     <View style={{flex: 1, backgroundColor: theme.backgrounds.whiteBG}}>
+      <StatusBar backgroundColor={'#FFF'} />
       {/* ====== Header ====== */}
 
       <View
@@ -44,16 +52,6 @@ const ChangePassword = props => {
           flexDirection: 'row',
           alignSelf: 'center',
         }}>
-        {/* <TouchableOpacity
-          activeOpacity={0.7}
-          style={{
-            height: 30,
-            width: '10%',
-            justifyContent: 'center',
-          }}>
-          <Fontisto name="arrow-left-l" size={23} color={'#1F1F1F'} />
-        </TouchableOpacity> */}
-
         <Text
           style={{
             fontSize: 24,
@@ -80,8 +78,8 @@ const ChangePassword = props => {
           <TextInput
             placeholder="Password"
             secureTextEntry={isState.eye}
-            value={isState.password}
             style={Styles.passwordInput}
+            value={isState.password}
             onChangeText={text => {
               setState({...isState, password: text});
             }}
@@ -114,10 +112,10 @@ const ChangePassword = props => {
           <TextInput
             placeholder="Confrim Password"
             secureTextEntry={isState.eye}
-            value={isState.password}
             style={Styles.passwordInput}
+            value={isState.confrimPassword}
             onChangeText={text => {
-              setState({...isState, password: text});
+              setState({...isState, confrimPassword: text});
             }}
           />
           <TouchableOpacity
@@ -144,13 +142,12 @@ const ChangePassword = props => {
           width: '100%',
           alignItems: 'center',
           justifyContent: 'center',
+          marginTop: 10
         }}>
         <AuthButton
           title={'Next'}
-          onPress={() =>
-            props?.navigation?.navigate('otp', {email: isState.email})
-          }
-          // loader={props?.loader}
+          onPress={() => NextButton()}
+          loader={isState.loader}
           primaryButton
         />
       </View>
@@ -160,7 +157,7 @@ const ChangePassword = props => {
 
 const Styles = StyleSheet.create({
   emailInput: {
-    width: '90%',
+    width: '100%',
     height: 42,
     backgroundColor: '#F9F9F9',
     borderRadius: 5,
@@ -171,7 +168,7 @@ const Styles = StyleSheet.create({
   },
   passwordInput: {
     backgroundColor: '#F9F9F9',
-    width: '80%',
+    width: '90%',
     height: 42,
     paddingLeft: 15,
     color: '#000',
